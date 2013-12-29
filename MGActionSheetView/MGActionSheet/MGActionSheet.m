@@ -10,8 +10,8 @@
 
 @interface MGActionSheet() {
     UIActionSheet *actionSheet;
-    ChoiceCallBack choiceCallBack;
 }
+@property (nonatomic, copy) ChoiceCallBack choiceCallBack;
 @end
 
 @implementation MGActionSheet
@@ -39,12 +39,12 @@
 }
 
 - (void)showInView:(UIView *)view withChoiceCompletition:(ChoiceCallBack)callBack {
-    choiceCallBack = callBack;
+    _choiceCallBack = callBack;
     [actionSheet showInView:view];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    choiceCallBack(buttonIndex);
+    _choiceCallBack(buttonIndex);
 }
 
 @end
