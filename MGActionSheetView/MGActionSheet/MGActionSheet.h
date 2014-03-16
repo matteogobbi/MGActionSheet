@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^ChoiceCallBack)(int);
+typedef void (^ChoiceCallBack)(NSInteger);
 
 @interface MGActionSheet : NSObject <UIActionSheetDelegate>
 
-@property (nonatomic) NSInteger cancelButtonIndex;
-@property (nonatomic) NSInteger destructiveButtonIndex;
+@property (assign, readonly) NSInteger cancelButtonIndex;
+@property (assign, readonly) NSInteger destructiveButtonIndex;
 
 - (id)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 

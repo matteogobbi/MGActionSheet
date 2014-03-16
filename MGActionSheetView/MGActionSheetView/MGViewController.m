@@ -9,23 +9,7 @@
 #import "MGViewController.h"
 #import "MGActionSheet.h"
 
-@interface MGViewController ()
-
-@end
-
 @implementation MGViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)openActionSheet:(id)sender {
     
@@ -34,7 +18,7 @@
     
     
     //Show with completition block
-    [actionSheet showInView:self.view withChoiceCompletition:^(int buttonIndex) {
+    [actionSheet showInView:self.view withChoiceCompletition:^(NSInteger buttonIndex) {
         
         if(buttonIndex == actionSheet.cancelButtonIndex) NSLog(@"Cancelled");
         else if(buttonIndex == actionSheet.destructiveButtonIndex) NSLog(@"Destructed");

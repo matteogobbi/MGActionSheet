@@ -39,7 +39,7 @@
 }
 
 - (void)showInView:(UIView *)view withChoiceCompletition:(ChoiceCallBack)callBack {
-    _choiceCallBack = callBack;
+    self.choiceCallBack = callBack;
     [actionSheet showInView:view];
 }
 
